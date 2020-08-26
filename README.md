@@ -5,8 +5,11 @@ These codes were used in the article of "A magnetization transfer weighted anato
   generate mask for motion correction
   compute the MT weighted anatomical images after motion correction.
   
-2. mc_run.m, motion correction
+2. mc_run.m
+  motion correction
   
-3.surface_recon_MT3DEPI.sh, surface reconstruction based on the MT weighted EPI images
+3.surface_recon_MT3DEPI.sh
+  surface reconstruction based on the MT weighted EPI images
 
-4.layer_recon_MT3DEPI.sh, cortical layer recontruction based on the cortical surface of the MT weighted EPI images
+4.layer_recon_MT3DEPI.sh
+  cortical layer recontruction based on the cortical surface of the MT weighted EPI images
