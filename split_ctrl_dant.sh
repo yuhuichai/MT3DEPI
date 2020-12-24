@@ -10,7 +10,7 @@ for patDir in 200306COS_TUC.wholebrain.Subj03.tutorial; do # replace with your o
 	echo "*****************************************************************************************************"
 	echo ++ start with ${patDir} 
 	echo "*****************************************************************************************************"
-	for filePre in anat_wholebrain_mt; do # prefix name of all runs including anatomical and functional images
+	for filePre in anat_wholebrain_mt; do # also add wholebrain_vaper if functional measurement was conducted in the same session
 	{
 		cd $top_dir/Func
 		sl_dsets=($(ls -f *${filePre}*e00*.nii*)) # nii in short while nii.gz in float
