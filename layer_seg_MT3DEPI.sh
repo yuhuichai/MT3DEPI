@@ -163,7 +163,7 @@ for patDir in 200306wholebrain.Subj03.tutorial; do
 	mv layers.nii wm3D_4smooth.nii
 	rm sht_wmMask4smooth.nii
 
-	echo "************** combine cortical layers, wm and csf ******************"
+	echo "************** combine layers in gm, wm and csf ******************"
 	3dcalc -a wm3D_4smooth.nii -b layers3D_4smooth.nii -c csf3D_4smooth.nii \
 		-d scaledXYZ_brain_mask_comb_mc.nii -e ../scaledXYZ_mean.sub_d_dant.masked.nii
 		-expr "(a+(b+step(b)*6)+(c+step(c)*26))*step(d)*notzero(e)" -prefix all3D_4smooth.nii -overwrite
