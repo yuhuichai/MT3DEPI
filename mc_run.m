@@ -1,4 +1,5 @@
-
+% this script reads the input nifti images for correction and feed them to the batch job of mc_job.m
+% parameters for motion correction and estimation are adjusted in mc_job.m
 
 clear;
 close all;
