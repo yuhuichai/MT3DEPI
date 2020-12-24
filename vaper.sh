@@ -3,7 +3,7 @@
 top_dir=/Volumes/VAPER/MTEPI/ # replace with your own data directory
 cd $top_dir
 
-for patDir in 200306COS_TUC.wholebrain.Subj03.tutorial; do # replace with your own patient name
+for patDir in 200306wholebrain.Subj03.tutorial; do # replace with your own patient name
 {
 	cd ${top_dir}/${patDir}
 
