@@ -4,7 +4,7 @@
 top_dir=/Volumes/VAPER/MTEPI/
 
 cd ${top_dir}
-for patDir in 200306COS_TUC.wholebrain.Subj03.tutorial; do #  *.Subj*/anat*.sft *.Subj*/Wholebrain/anat*.sft
+for patDir in 200306wholebrain.Subj03.tutorial; do #  *.Subj*/anat*.sft *.Subj*/Wholebrain/anat*.sft
 {
 	
 	echo "*********************************************************************************************"
