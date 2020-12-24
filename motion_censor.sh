@@ -4,7 +4,7 @@
 dataDir=/Volumes/VAPER/MTEPI/ # replace with your own data directory
 cd ${dataDir}
 
-for patDir in 200306COS_TUC.wholebrain.Subj03.tutorial; do # replace with your own patient name
+for patDir in 200306wholebrain.Subj03.tutorial; do # replace with your own patient name
 {
 	top_dir=${dataDir}/${patDir}
 	echo "*****************************************************************************************************"
