@@ -4,7 +4,7 @@
 clear;
 close all;
 batchDir='/Volumes/VAPER/MTEPI/batch';
-subjDir='/Volumes/VAPER/MTEPI/200306COS_TUC.wholebrain.Subj03.tutorial/';
+subjDir='/Volumes/VAPER/MTEPI/200306wholebrain.Subj03.tutorial/';
 folderList={'anat_wholebrain_mt.sft'};
 % when mt-3d-epi and vaper-3d-epi were acquired together, then folderList={'wholebrain_mt.sft' 'wholebrain_vaper.sft'}; 
 
