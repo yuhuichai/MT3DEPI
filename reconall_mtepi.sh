@@ -69,8 +69,6 @@ for patID in 200306wholebrain.Subj03.tutorial; do
 	# recon-all -autrecon2 -autorecon3 -s <subjid>
 	recon-all -s Surf -autorecon2 -autorecon3 -hires -parallel -openmp 3 #-xopts-overwrite -expert ${batchDir}/reconall.expert
 
-	# recon-all -s Surf_denoise_copy -autorecon2-wm -autorecon3 -hires -parallel -openmp 3 -xopts-overwrite -expert ${batchDir}/reconall.expert
-
 	@SUMA_Make_Spec_FS -fspath Surf/surf -sid SUMA -NIFTI
 
 }
