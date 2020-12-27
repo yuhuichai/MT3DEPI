@@ -4,13 +4,13 @@
 dataDir=/Volumes/VAPER/MTEPI/ # replace with your own data directory
 cd ${dataDir}
 
-for patDir in 200306wholebrain.Subj03.tutorial; do # replace with your own patient name
+for patDir in Subj03.tutorial; do # replace with your own patient name
 {
 	top_dir=${dataDir}/${patDir}
 	echo "*****************************************************************************************************"
 	echo ++ start with ${patDir} 
 	echo "*****************************************************************************************************"
-	for filePre in anat_wholebrain_mt; do # also add wholebrain_vaper if functional measurement was conducted in the same session
+	for filePre in wholebrain_mt; do # also add wholebrain_vaper if functional measurement was conducted in the same session
 	{
 		cd $top_dir/Func
 		sl_dsets=($(ls -f *${filePre}*e00*.nii*)) # nii in short while nii.gz in float
