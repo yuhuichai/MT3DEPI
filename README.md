@@ -1,5 +1,10 @@
 These codes were used in the article of "Magnetization Transfer Weighted EPI Images as Anatomical Reference in Native fMRI Space". It used publicly available software packages, including AFNI, SPM, ANTs, FreeSurfer, and LAYNII. The data are available in https://osf.io/s4bqe/?view_only=dd8a1142ecd74d708526476b7776b717 
 
+Authors: Yuhui Chai, Linqing Li, Yicun Wang, Laurentius Huber, Benedikt A. Poser, Jeff Duyn, Peter A. Bandettini
+
+*Address correspondence to Dr. Yuhui Chai, Section on Functional Imaging Methods, Laboratory of Brain and Cognition, NIMH, NIH, Bethesda, MD 20892, USA. E-mail: yuhui.chai@nih.gov or yhchai@outlook.com
+
+
 (1) Script used to split original time series into even (CTRL, can be treated as BOLD signal) and odd (DANTE-prepared images in functional runs, or MT-prepared in anatomical run) time points and create mask for motion correction: https://github.com/yuhuichai/MT3DEPI/blob/master/split_ctrl_dant.sh This script read the nifti images of all runs. It is writen in bash shell and depends on AFNI program (tested in AFNI_19.3.13). The run time is around several minutes.
 
 (2) Script used for motion correction: https://github.com/yuhuichai/MT3DEPI/blob/master/mc_run.m This script read the all functional and anatomical runs, and replace the input in mc_job.m with these nifti names. It runs in MATLAB (tested in MATLAB R2016b) and depends on the SPM12 and REST (http://restfmri.net/forum/, tested with REST_V1.8_130615) package. The run time can be up to 2 hours or even more.
