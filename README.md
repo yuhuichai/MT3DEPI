@@ -1,19 +1,11 @@
 These codes were used in the article of "A magnetization transfer weighted anatomical reference allows laminar analysis in native fMRI space". I am still working on it to make it friendly for a tutorial analysis.
 
-1. prep.sh
-   split original time series into control and MT-prepared
-   generate mask for motion correction
-   compute the MT weighted anatomical images after motion correction.
-  
-2. mc_run.m
-   motion correction
-  
-3. surface_recon_MT3DEPI.sh
-   surface reconstruction based on the MT weighted EPI images
+(1) Script used to split original time series into even (CTRL, can be treated as BOLD signal) and odd (DANTE-prepared images in functional runs, or MT-prepared in anatomical run) time points and create mask for motion correction: https://github.com/yuhuichai/MT3DEPI/blob/master/split_ctrl_dant.sh This script read the nifti images of all runs. It is writen in bash shell and depends on AFNI program (tested in AFNI_19.3.13). The run time is around several minutes.
 
-4. layer_recon_MT3DEPI.sh
-   cortical layer recontruction based on the cortical surface of the MT weighted EPI images
-   
-5. align_anat2func.sh
-   alignment between MP2RAGE and MTw-EPI images
-   This step is needed as MTw-EPI will borrow cerebellum from MP2RAGE for freesurfer (freesurfer only eats whole brain)
+(2) Script used for motion correction: https://github.com/yuhuichai/MT3DEPI/blob/master/mc_run.m This script read the all functional and anatomical runs, and replace the input in mc_job.m with these nifti names. It runs in MATLAB (tested in MATLAB R2016b) and depends on the SPM12 and REST (http://restfmri.net/forum/, tested with REST_V1.8_130615) package. The run time can be up to 2 hours or even more.
+
+Motion correction was applied to the images of control and MT-prepared volumes in MT-3D-EPI imaging, together with the images of control and DANTE-prepared volumes in VAPER-3D-EPI imaging when functional measurements were conducted in the same session. This strategy of applying motion correction to all runs acquired by different sequences only work when an identical EPI acquisition was applied across all.
+
+(3) Script used to censor time points whenever the Euclidean norm of the motion derivatives exceeded 0.4 mm or when at least 10% of image voxels were seen as outliers from the trend: https://github.com/yuhuichai/MT3DEPI/blob/master/motion_censor.sh It reads the motion parameters estimated by SPM12 in step 2, and runs AFNI programs as in bash shell. The run time is around 10 mins.
+
+(4) The time series of MT-weighted anatomical images (e.g.,sub_d_dant1.nii) were generated via dynamic subtraction of the paired control and MT-prepared time points and further division by the MT-prepared images. VAPER time series (e.g.,sub_d_bold1.nii) were generated via dynamic subtraction of the paired control and DANTE-prepared time points and further division of the control. The mean MT-weighted anatomical images were further denoised using ANTs program DenoiseImage (output as mean.sub_d_dant.masked.denoised.nii) and then used for histogram analysis and cortical depth reconstruction. The script of this step is available in https://github.com/yuhuichai/MT3DEPI/blob/master/vaper.sh This script is writen in bash shell and depends on AFNI programs. The run time is around 10 mins.
