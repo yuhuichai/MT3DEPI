@@ -78,7 +78,7 @@ for subj in 200306wholebrain.Subj03.tutorial; do
 
 	brain=${brainDir}/brain.nii
 	# ############################################################
-	echo "++ using ${brain} as reference leads to errors, so use it as initial point"
+	echo "++ using ${brain} as reference leads to minor errors, so use it as initial point"
 	antsApplyTransforms -d 3 -n BSpline[5] -i ${brain} \
 		-o brain2epi.nii -t [registered_0GenericAffine.mat,1] \
 		-t registered_1InverseWarp.nii.gz -r ${brain}
