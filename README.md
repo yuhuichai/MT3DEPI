@@ -1,4 +1,4 @@
-These codes were used in the article of "Magnetization Transfer Weighted EPI Images as Anatomical Reference in Native fMRI Space". It used publicly available software packages, including AFNI, SPM, ANTs, FreeSurfer, and LAYNII. The data are available in https://osf.io/s4bqe/?view_only=dd8a1142ecd74d708526476b7776b717 
+These codes were used in the article of "Magnetization Transfer Weighted EPI Facilitates Cortical Depth Determination in Native fMRI Space". It used publicly available software packages, including AFNI, SPM, ANTs, FreeSurfer, and LAYNII. The data are available in https://osf.io/s4bqe/?view_only=dd8a1142ecd74d708526476b7776b717 
 
 Authors: Yuhui Chai, Linqing Li, Yicun Wang, Laurentius Huber, Benedikt A. Poser, Jeff Duyn, Peter A. Bandettini
 
